@@ -28,11 +28,17 @@ function getTime(seconds) { //convert?
 }
 
 function speedSymbolsMin(text, time) {
-	return text.length / time * 60 + " symbols/min";
+	var speed = 0;
+	if(time !== 0)
+		speed = (text.length / time) * 60;
+	return speed + " symbols/min";
 }
 
 function speedWordsMin(text, time) {
-	return text.split(" ").length / time * 60 + " words/min";
+	var speed = 0;
+	if(time !== 0)
+		speed = (text.split(" ").length / time) * 60;
+	return speed + " words/min";
 }
 
 function errorsSymbolsInText(text1, text2) {
