@@ -1,0 +1,70 @@
+.container {
+	width: 600px; 
+	margin: 50px auto;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 30px 30px 70px 30px;
+}
+
+.table {
+	display: table;	
+}
+
+.item {
+	display: table-row;
+}
+
+.label {
+	display: table-cell;
+	padding-right: 30px;
+	
+	vertical-align: top;
+    padding-top: 10px;
+}
+
+.editor {
+	margin-bottom: 15px;
+}
+
+.inline-block {
+	display: inline-block;	
+}
+
+.inline-block-label {
+	display: inline-block;	
+	vertical-align: top;
+    padding-top: 10px;
+}
+
+.button {
+	float: right;
+	margin-top: 15px;
+}
+
+.timer {
+	margin-bottom: 25px;
+}
+
+.text {
+	margin-bottom: 25px;
+}
+
+.dx-texteditor.dx-state-readonly {
+    border-color: black;
+}
+
+.view {
+	
+}
+
+.view1 {
+	
+}
+
+.view2 {
+	display: none;
+}
+
+.view3 {
+	display: none;
+}

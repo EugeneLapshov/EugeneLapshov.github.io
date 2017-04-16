@@ -1,1 +1,109 @@
-Test
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>        
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/16.2.6/css/dx.common.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/16.2.6/css/dx.light.css" />
+	<link rel="stylesheet" type="text/css" href="styles.css" />		
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/16.2.6/js/dx.web.js"></script>
+ 	<script type="text/javascript" src="data.js"></script>
+	<script type="text/javascript" src="utils.js"></script>
+    <script type="text/javascript" src="index.js"></script>	
+</head>
+<body>
+	<div class="container">			
+		
+		<div class="view view1">				
+			
+			<div class="table">
+			
+				<div class="item">
+					<div class="label">Select&nbsp;Fragment:</div>
+					<div class="editor" data-bind="dxSelectBox: {
+						dataSource: data,
+						value: selectBoxValue,
+						valueExpr: 'name',
+						displayExpr: 'displayName',
+						width: '100%'
+					}"></div>
+				</div>
+				
+				<div class="item">
+					<div class="label">Set&nbsp;Time&nbsp;Limit:</div>
+					<div class="editor">
+						<div class="inline-block" data-bind="dxNumberBox: {
+							showSpinButtons: true,
+							value: timeMin,
+							width: '70px',
+							min: 0,
+							max: 999
+						}"></div>
+						<div class="inline-block-label">min</div>
+						<div class="inline-block" data-bind="dxNumberBox: {
+							showSpinButtons: true,
+							value: timeSec,
+							width: '70px',
+							min: 0,
+							max: 59
+						}"></div>
+						<div class="inline-block-label">sec</div>
+					</div>
+				</div>
+			
+			</div>
+			
+			<div class="button" data-bind="dxButton:{ 
+				text: buttonText1, 
+				onClick: buttonClicked1 }
+			"></div>
+		</div>
+		
+		<div class="view view2">
+			
+			<div class="timer" data-bind="text: timer"></div>
+			
+			<div class="text" data-bind="dxTextArea: { 
+				value: text1, 
+				height: 200,
+				readOnly: true,
+				focusStateEnabled: false,
+				hoverStateEnabled: false
+			}"></div>
+			
+			<div data-bind="dxTextArea: { 
+				value: text2, 
+				height: 200,
+				onFocusIn: text2OnFocusIn,
+				onInput: text2OnInput,
+				placeholder: 'To start test cursor and begin type'
+			}"></div>
+			
+			<div class="button" data-bind="dxButton:{ 
+				text: buttonText2, 
+				onClick: buttonClicked2
+			}"></div>
+		</div>
+		
+		<div class="view view3">
+		
+			
+			<div data-bind="text: time3"></div>
+			<div data-bind="text: speed1"></div>
+			<div data-bind="text: speed2"></div>
+			
+			<div data-bind="text: errors1"></div>
+			<div data-bind="text: errors2"></div>
+			
+			<div class="button" data-bind="dxButton:{ 
+				text: buttonText3, 
+				onClick: buttonClicked3 }
+			"></div>
+		</div>
+		
+	</div>
+</body>
+</html>
