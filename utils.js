@@ -66,7 +66,15 @@ function errorsWordsInText(text1, text2) {
 }
 
 function start() {
-	//обнулить все переменные
+	secondsCounter(0);
+	
+	selectBoxValue(data[0].name);
+	timeMin(1);
+	timeSec(0);
+	
+	text2("");
+	
+	showView(1);
 }
 
 function finish() {

@@ -18,8 +18,7 @@ $(function () {
 			finish();
 		},
 		this.buttonClicked3 = function() {
-			secondsCounter(0); //start() обнулить все значнения
-			showView(1);			
+			start();
 		},
 		
 		//time
