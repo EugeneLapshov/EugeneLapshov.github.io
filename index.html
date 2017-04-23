@@ -90,13 +90,28 @@
 		
 		<div class="view view3">
 		
-			
-			<div data-bind="text: time3"></div>
-			<div data-bind="text: speed1"></div>
-			<div data-bind="text: speed2"></div>
-			
-			<div data-bind="text: errors1"></div>
-			<div data-bind="text: errors2"></div>
+			<div class="table">
+				<div class="item">
+					<div class="label">Time:</div>
+					<div class="label" data-bind="text: time3"></div>
+				</div>				
+				<div class="item">
+					<div class="label">Speed1:</div>
+					<div class="label" data-bind="text: speed1"></div>
+				</div>
+				<div class="item">
+					<div class="label">Speed2:</div>
+					<div class="label" data-bind="text: speed2"></div>
+				</div>
+				<div class="item">
+					<div class="label">Errors1:</div>
+					<div class="label" data-bind="text: errors1"></div>
+				</div>
+				<div class="item">
+					<div class="label">Errors2:</div>
+					<div class="label" data-bind="text: errors2"></div>
+				</div>
+			</div>
 			
 			<div class="button" data-bind="dxButton:{ 
 				text: buttonText3, 

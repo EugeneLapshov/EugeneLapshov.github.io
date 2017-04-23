@@ -44,19 +44,19 @@ $(function () {
 				
 		//view3
 		this.time3 = ko.computed(function() {
-			return "Time: " + getTime(secondsCounter());
+			return getTime(secondsCounter());
 		}, this);
 		this.speed1 = ko.computed(function() {
-			return "Speed1: " + speedSymbolsMin(text2(), secondsCounter());
+			return speedSymbolsMin(text2(), secondsCounter());
 		}, this);
 		this.speed2 = ko.computed(function() {
-			return "Speed2: " + speedWordsMin(text2(), secondsCounter());
+			return speedWordsMin(text2(), secondsCounter());
 		}, this);
 		this.errors1 = ko.computed(function() {
-			return "Errors1: " + errorsSymbolsInText(text1(), text2());
+			return errorsSymbolsInText(text1(), text2());
 		}, this);
 		this.errors2 = ko.computed(function() {
-			return "Errors2: " + errorsWordsInText(text1(), text2());
+			return errorsWordsInText(text1(), text2());
 		}, this);		
 		
 		//interaction (events)
