@@ -1,18 +1,5 @@
 $(function () {
 	var viewModel = function() {
-		var that = this;
-		
-		//navigation, interaction(?)
-		this.buttonClicked1 = function() { 
-			start();
-		},
-		this.buttonClicked2 = function() { 
-			finish();
-		},
-		this.buttonClicked3 = function() {
-			newTest();
-		},
-		
 		//time
 		this.secondsCounter = ko.observable(0);
 		
