@@ -30,14 +30,14 @@ function getTime(seconds) { //convert?
 function speedSymbolsMin(text, time) {
 	var speed = 0;
 	if(time !== 0)
-		speed = (text.length / time) * 60;
+		speed = ((text.length / time) * 60).toFixed();
 	return speed + " symbols/min";
 }
 
 function speedWordsMin(text, time) {
 	var speed = 0;
 	if(time !== 0)
-		speed = (text.split(" ").length / time) * 60;
+		speed = ((text.split(" ").length / time) * 60).toFixed();
 	return speed + " words/min";
 }
 
@@ -50,7 +50,7 @@ function errorsSymbolsInText(text1, text2) {
 			errors++;
 		}
 	});
-	return errors + "/" + text1.split("").length;
+	return (errors / text1.split("").length * 100).toFixed();
 }
 
 function errorsWordsInText(text1, text2) {
@@ -62,7 +62,7 @@ function errorsWordsInText(text1, text2) {
 			errors++;
 		}
 	});
-	return errors + "/" + text1.split(" ").length;
+	return (errors / text1.split(" ").length * 100).toFixed();
 }
 
 function start() {

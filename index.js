@@ -64,11 +64,10 @@ $(function () {
 			if(isTimerNull()) {
 				setTimer(setInterval(function() { 
 					secondsCounter(secondsCounter() + 1);
+					if(secondsCounter() === getSeconds(timeMin(), timeSec())) {
+						finish();
+					}
 				}, 1000));
-				
-				setTimeout(function() {
-					finish();
-				}, getSeconds(timeMin(), timeSec()) * 1000);
 			}
 		};
 		this.text2OnInput = function(e) {
