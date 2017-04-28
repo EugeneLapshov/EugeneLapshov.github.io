@@ -8,7 +8,8 @@
 }
 
 .table {
-	display: table;	
+	display: table;
+	margin: 0 auto;
 }
 
 .item {
@@ -54,18 +55,18 @@
     border-color: black;
 }
 
-.view {
+.page {
 	
 }
 
-.view1 {
+.page1 {
 	
 }
 
-.view2 {
+.page2 {
 	display: none;
 }
 
-.view3 {
+.page3 {
 	display: none;
 }

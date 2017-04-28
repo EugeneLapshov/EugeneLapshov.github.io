@@ -17,12 +17,12 @@
 <body>
 	<div class="container">			
 		
-		<div class="view view1">				
+		<div class="page page1">				
 			
 			<div class="table">
 			
 				<div class="item">
-					<div class="label">Select&nbsp;Fragment:</div>
+					<div class="label">Fragment:</div>
 					<div class="editor" data-bind="dxSelectBox: {
 						dataSource: data,
 						value: selectBoxValue,
@@ -33,7 +33,7 @@
 				</div>
 				
 				<div class="item">
-					<div class="label">Set&nbsp;Time&nbsp;Limit:</div>
+					<div class="label">Time:</div>
 					<div class="editor">
 						<div class="inline-block" data-bind="dxNumberBox: {
 							showSpinButtons: true,
@@ -62,7 +62,7 @@
 			"></div>
 		</div>
 		
-		<div class="view view2">
+		<div class="page page2">
 			
 			<div class="timer" data-bind="text: timer"></div>
 			
@@ -79,7 +79,7 @@
 				height: 200,
 				onFocusIn: text2OnFocusIn,
 				onInput: text2OnInput,
-				placeholder: 'To start test cursor and begin type'
+				placeholder: 'To start the test, click here and begin to type.'
 			}"></div>
 			
 			<div class="button" data-bind="dxButton:{ 
@@ -88,7 +88,7 @@
 			}"></div>
 		</div>
 		
-		<div class="view view3">
+		<div class="page page3">
 		
 			<div class="table">
 				<div class="item">
@@ -96,19 +96,19 @@
 					<div class="label" data-bind="text: time3"></div>
 				</div>				
 				<div class="item">
-					<div class="label">Speed1:</div>
+					<div class="label">Speed:</div>
 					<div class="label" data-bind="text: speed1"></div>
 				</div>
 				<div class="item">
-					<div class="label">Speed2:</div>
+					<div class="label"></div>
 					<div class="label" data-bind="text: speed2"></div>
 				</div>
 				<div class="item">
-					<div class="label">Errors1:</div>
+					<div class="label">Accuracy:</div>
 					<div class="label" data-bind="text: errors1"></div>
 				</div>
 				<div class="item">
-					<div class="label">Errors2:</div>
+					<div class="label"></div>
 					<div class="label" data-bind="text: errors2"></div>
 				</div>
 			</div>

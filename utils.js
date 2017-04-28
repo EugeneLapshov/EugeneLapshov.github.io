@@ -1,6 +1,6 @@
-﻿function showView(viewIndex) {
-	$(".view").hide();
-	$(".view" + viewIndex).show();		
+﻿function showPage(pageIndex) {
+	$(".page").hide();
+	$(".page" + pageIndex).show();		
 };
 
 
@@ -31,14 +31,14 @@ function speedSymbolsMin(text, time) {
 	var speed = 0;
 	if(time !== 0)
 		speed = ((text.length / time) * 60).toFixed();
-	return speed + " symbols/min";
+	return speed + " characters/min (CPM)";
 }
 
 function speedWordsMin(text, time) {
 	var speed = 0;
 	if(time !== 0)
 		speed = ((text.split(" ").length / time) * 60).toFixed();
-	return speed + " words/min";
+	return speed + " words/min (WPM)";
 }
 
 function errorsSymbolsInText(text1, text2) {
@@ -50,7 +50,7 @@ function errorsSymbolsInText(text1, text2) {
 			errors++;
 		}
 	});
-	return (errors / text1.split("").length * 100).toFixed();
+	return (errors / text1.split("").length * 100).toFixed() + "%";
 }
 
 function errorsWordsInText(text1, text2) {
@@ -62,7 +62,7 @@ function errorsWordsInText(text1, text2) {
 			errors++;
 		}
 	});
-	return (errors / text1.split(" ").length * 100).toFixed();
+	return (errors / text1.split(" ").length * 100).toFixed() + "%";
 }
 
 function start() {
@@ -74,11 +74,11 @@ function start() {
 	
 	text2("");
 	
-	showView(1);
+	showPage(1);
 }
 
 function finish() {
 	clearInterval(getTimer());
 	setTimer(null);
-	showView(3);
+	showPage(3);
 }

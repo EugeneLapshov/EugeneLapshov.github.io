@@ -8,11 +8,11 @@ $(function () {
 		var that = this;
 		
 		//navigation, interaction(?)
-		this.buttonText1 = "Start Typing Test",
+		this.buttonText1 = "Start Test",
 		this.buttonText2 = "Finish Test",
 		this.buttonText3 = "New Test",
 		this.buttonClicked1 = function() { 
-			showView(2); //next()
+			showPage(2); //next()
 		},
 		this.buttonClicked2 = function() { 
 			finish();
@@ -24,15 +24,15 @@ $(function () {
 		//time
 		this.secondsCounter = ko.observable(0);
 		
-		//view1
+		//page1
 		this.selectBoxValue = ko.observable(data[0].name);
 		this.timeMin = ko.observable(1);
 		this.timeSec = ko.observable(0);
 		
-		//view2		
+		//page2		
 		this.timer = ko.computed(function() {
 			var seconds = getSeconds(timeMin(), timeSec()) - secondsCounter();
-			return "Time: " + getTime(seconds);
+			return "Time Left: " + getTime(seconds);
 		}, this);
 		
 		this.text1 = ko.computed(function() { 
@@ -42,7 +42,7 @@ $(function () {
 		}, this);		
 		this.text2 = ko.observable("");
 				
-		//view3
+		//page3
 		this.time3 = ko.computed(function() {
 			return getTime(secondsCounter());
 		}, this);
