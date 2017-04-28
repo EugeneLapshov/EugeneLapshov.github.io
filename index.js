@@ -1,16 +1,8 @@
 $(function () {
-	// TODO: add your code here
-			
-	
-	
-	//ViewModel	
 	var viewModel = function() {
 		var that = this;
 		
 		//navigation, interaction(?)
-		this.buttonText1 = "Start Test",
-		this.buttonText2 = "Finish Test",
-		this.buttonText3 = "New Test",
 		this.buttonClicked1 = function() { 
 			showPage(2); //next()
 		},
@@ -62,9 +54,10 @@ $(function () {
 		//interaction (events)
 		this.text2OnFocusIn = function(e) {			
 			if(isTimerNull()) {
+				var time = getSeconds(timeMin(), timeSec());
 				setTimer(setInterval(function() { 
 					secondsCounter(secondsCounter() + 1);
-					if(secondsCounter() === getSeconds(timeMin(), timeSec())) {
+					if(secondsCounter() === time) {
 						finish();
 					}
 				}, 1000));
@@ -73,11 +66,8 @@ $(function () {
 		this.text2OnInput = function(e) {
 			if(text1().length === e.component.option("text").length && text1() === e.component.option("text")) {
 				finish();
-				
-				//text2(component.text) или снять при анфокусе
 			}
 		};
 	};		
 	ko.applyBindings(viewModel);
-	
 });

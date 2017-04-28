@@ -15,12 +15,9 @@
     <script type="text/javascript" src="index.js"></script>	
 </head>
 <body>
-	<div class="container">			
-		
-		<div class="page page1">				
-			
+	<div class="container">
+		<div class="page page1">
 			<div class="table">
-			
 				<div class="item">
 					<div class="label">Fragment:</div>
 					<div class="editor" data-bind="dxSelectBox: {
@@ -31,7 +28,6 @@
 						width: '100%'
 					}"></div>
 				</div>
-				
 				<div class="item">
 					<div class="label">Time:</div>
 					<div class="editor">
@@ -52,44 +48,35 @@
 						}"></div>
 						<div class="inline-block-label">sec</div>
 					</div>
-				</div>
-			
-			</div>
-			
+				</div>			
+			</div>			
 			<div class="button" data-bind="dxButton:{ 
-				text: buttonText1, 
+				text: 'Start Test', 
 				onClick: buttonClicked1 }
 			"></div>
-		</div>
-		
-		<div class="page page2">
-			
-			<div class="timer" data-bind="text: timer"></div>
-			
+		</div>		
+		<div class="page page2">			
+			<div class="timer" data-bind="text: timer"></div>			
 			<div class="text" data-bind="dxTextArea: { 
 				value: text1, 
 				height: 200,
 				readOnly: true,
 				focusStateEnabled: false,
 				hoverStateEnabled: false
-			}"></div>
-			
+			}"></div>			
 			<div data-bind="dxTextArea: { 
 				value: text2, 
 				height: 200,
 				onFocusIn: text2OnFocusIn,
 				onInput: text2OnInput,
 				placeholder: 'To start the test, click here and begin to type.'
-			}"></div>
-			
+			}"></div>			
 			<div class="button" data-bind="dxButton:{ 
-				text: buttonText2, 
+				text: 'Finish Test', 
 				onClick: buttonClicked2
 			}"></div>
-		</div>
-		
-		<div class="page page3">
-		
+		</div>		
+		<div class="page page3">		
 			<div class="table">
 				<div class="item">
 					<div class="label">Time:</div>
@@ -111,14 +98,12 @@
 					<div class="label"></div>
 					<div class="label" data-bind="text: errors2"></div>
 				</div>
-			</div>
-			
+			</div>			
 			<div class="button" data-bind="dxButton:{ 
-				text: buttonText3, 
+				text: 'New Test', 
 				onClick: buttonClicked3 }
 			"></div>
 		</div>
-		
 	</div>
 </body>
 </html>
