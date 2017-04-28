@@ -65,20 +65,24 @@ function errorsWordsInText(text1, text2) {
 	return (errors / text1.split(" ").length * 100).toFixed() + "%";
 }
 
+
 function start() {
-	secondsCounter(0);
-	
-	selectBoxValue(data[0].name);
-	timeMin(1);
-	timeSec(0);
-	
-	text2("");
-	
-	showPage(1);
+	showPage(2);
 }
 
 function finish() {
 	clearInterval(getTimer());
 	setTimer(null);
 	showPage(3);
+}
+
+function newTest() {
+	secondsCounter(0);
+	
+	selectBoxValue(data[0].name);
+	timeMin(1);
+	timeSec(0);
+	
+	text2("");	
+	showPage(1);
 }

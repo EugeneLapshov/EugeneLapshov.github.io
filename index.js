@@ -4,13 +4,13 @@ $(function () {
 		
 		//navigation, interaction(?)
 		this.buttonClicked1 = function() { 
-			showPage(2); //next()
+			start();
 		},
 		this.buttonClicked2 = function() { 
 			finish();
 		},
 		this.buttonClicked3 = function() {
-			start();
+			newTest();
 		},
 		
 		//time
