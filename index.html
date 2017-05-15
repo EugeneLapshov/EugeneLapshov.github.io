@@ -58,17 +58,17 @@
 		<div class="page page2">
 			<div class="timer" data-bind="text: timer"></div>
 			<div class="text" data-bind="dxTextArea: {
-				value: text1, 
+				value: outputText, 
 				height: 200,
 				readOnly: true,
 				focusStateEnabled: false,
 				hoverStateEnabled: false
 			}"></div>
 			<div data-bind="dxTextArea: { 
-				value: text2, 
+				value: inputText, 
 				height: 200,
-				onFocusIn: text2OnFocusIn,
-				onInput: text2OnInput,
+				onFocusIn: inputTextOnFocusIn,
+				onInput: inputTextOnInput,
 				placeholder: 'To start the test, click here and begin to type.'
 			}"></div>
 			<div class="button" data-bind="dxButton:{ 

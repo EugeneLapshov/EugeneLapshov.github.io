@@ -16,32 +16,32 @@ $(function () {
 			return "Time Left: " + getTimeString(seconds);
 		}, this);
 		
-		this.text1 = ko.computed(function() { 
+		this.outputText = ko.computed(function() { 
 			return data.filter(function(item) {
 				return item.name === selectBoxValue();
 			})[0].text;
 		}, this);		
-		this.text2 = ko.observable("");
+		this.inputText = ko.observable("");
 				
 		//page3
 		this.time3 = ko.computed(function() {
 			return getTimeString(secondsCounter());
 		}, this);
 		this.speed1 = ko.computed(function() {
-			return speedSymbolsMin(text2(), secondsCounter());
+			return speedSymbolsMin(inputText(), secondsCounter());
 		}, this);
 		this.speed2 = ko.computed(function() {
-			return speedWordsMin(text2(), secondsCounter());
+			return speedWordsMin(inputText(), secondsCounter());
 		}, this);
 		this.errors1 = ko.computed(function() {
-			return errorsSymbolsInText(text1(), text2());
+			return errorsSymbolsInText(outputText(), inputText());
 		}, this);
 		this.errors2 = ko.computed(function() {
-			return errorsWordsInText(text1(), text2());
+			return errorsWordsInText(outputText(), inputText());
 		}, this);		
 		
 		//interaction (events)
-		this.text2OnFocusIn = function(e) {			
+		this.inputTextOnFocusIn = function(e) {			
 			if(isTimerNull()) {
 				var time = getSeconds(timeMin(), timeSec());
 				setTimer(setInterval(function() { 
@@ -52,8 +52,8 @@ $(function () {
 				}, 1000));
 			}
 		};
-		this.text2OnInput = function(e) {
-			if(text1().length === e.component.option("text").length && text1() === e.component.option("text")) {
+		this.inputTextOnInput = function(e) {
+			if(outputText().length === e.component.option("text").length && outputText() === e.component.option("text")) {
 				finish();
 			}
 		};

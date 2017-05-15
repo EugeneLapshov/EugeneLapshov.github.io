@@ -34,28 +34,28 @@ function speedWordsMin(text, time) {
 	return speed + " words/min";
 }
 
-function errorsSymbolsInText(text1, text2) {
+function errorsSymbolsInText(outputText, text2) {
 	var symbols = text2.split("");
 	
 	var errors = 0;
-	text1.split("").forEach(function(symbol, i, arr) {
+	outputText.split("").forEach(function(symbol, i, arr) {
 		if(symbol !== symbols[i]) {
 			errors++;
 		}
 	});
-	return (errors / text1.split("").length * 100).toFixed() + "%";
+	return (errors / outputText.split("").length * 100).toFixed() + "%";
 }
 
-function errorsWordsInText(text1, text2) {
+function errorsWordsInText(outputText, text2) {
 	var words = text2.split(" ");
 	
 	var errors = 0;
-	text1.split(" ").forEach(function(word, i, arr) {
+	outputText.split(" ").forEach(function(word, i, arr) {
 		if(word !== words[i]) {
 			errors++;
 		}
 	});
-	return (errors / text1.split(" ").length * 100).toFixed() + "%";
+	return (errors / outputText.split(" ").length * 100).toFixed() + "%";
 }
 
 function showPage(pageIndex) {
@@ -78,6 +78,6 @@ function newTest() {
 	selectBoxValue(data[0].name);
 	timeMin(1);
 	timeSec(0);	
-	text2("");	
+	inputText("");	
 	showPage(1);
 }
