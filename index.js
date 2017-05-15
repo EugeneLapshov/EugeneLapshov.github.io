@@ -28,22 +28,22 @@ $(function () {
 			return getTimeString(secondsCounter());
 		}, this);
 		this.SPM = ko.computed(function() {
-			return speedSymbolsMin(inputText(), secondsCounter());
+			return calculateSPM(inputText(), secondsCounter());
 		}, this);
 		this.WPM = ko.computed(function() {
-			return speedWordsMin(inputText(), secondsCounter());
+			return calculateWPM(inputText(), secondsCounter());
 		}, this);
 		this.errors = ko.computed(function() {
-			return errorsWordsInText(outputText(), inputText());
-		}, this);		
+			return calculateErrors(outputText(), inputText());
+		}, this);
 		
 		//interaction (events)
 		this.onFocusIn = function(e) {			
 			if(isTimerNull()) {
-				var _time = getSeconds(minutes(), seconds());
+				var _seconds = getSeconds(minutes(), seconds());
 				setTimer(setInterval(function() { 
 					secondsCounter(secondsCounter() + 1);
-					if(secondsCounter() === _time) {
+					if(secondsCounter() === _seconds) {
 						finish();
 					}
 				}, 1000));

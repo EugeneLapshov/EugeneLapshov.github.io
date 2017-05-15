@@ -20,21 +20,21 @@ function getTimeString(seconds) {
 	return min + " min " + sec + " sec";
 }
 
-function speedSymbolsMin(text, time) {
+function calculateSPM(text, seconds) {
 	var speed = 0;
-	if(time !== 0)
-		speed = ((text.length / time) * 60).toFixed();
+	if(seconds !== 0)
+		speed = (text.length / seconds * 60).toFixed();
 	return speed + " characters/min";
 }
 
-function speedWordsMin(text, time) {
+function calculateWPM(text, seconds) {
 	var speed = 0;
-	if(time !== 0)
-		speed = ((text.split(" ").length / time) * 60).toFixed();
+	if(seconds !== 0)
+		speed = (text.split(" ").length / seconds * 60).toFixed();
 	return speed + " words/min";
 }
 
-function errorsWordsInText(outputText, inputText) {
+function calculateErrors(outputText, inputText) {
 	var numberOfErrors = 0,
 		inputWords = inputText.split(" "),
 		outputWords = outputText.split(" ");	
