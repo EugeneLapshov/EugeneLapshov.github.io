@@ -1,27 +1,20 @@
-﻿function showPage(pageIndex) {
-	$(".page").hide();
-	$(".page" + pageIndex).show();		
-};
-
-
-function getTimer() {
-	return window.time;
+﻿function getTimer() {
+	return window.timerId;
 }
-	
+
 function setTimer(id) {
-	window.time = id;
+	window.timerId = id;
 }
 
 function isTimerNull() {
 	return !getTimer();
 }
 
-
-function getSeconds(min, sec) { //cconvert?
+function getSeconds(min, sec) {
 	return 60 * min + sec;
 }
 
-function getTime(seconds) { //convert?
+function getTimeString(seconds) {
 	var min = Math.floor(seconds / 60);
 	var sec = seconds - 60 * min;
 	return min + " min " + sec + " sec";
@@ -65,6 +58,10 @@ function errorsWordsInText(text1, text2) {
 	return (errors / text1.split(" ").length * 100).toFixed() + "%";
 }
 
+function showPage(pageIndex) {
+	$(".page").hide();
+	$(".page" + pageIndex).show();		
+};
 
 function start() {
 	showPage(2);
@@ -77,12 +74,10 @@ function finish() {
 }
 
 function newTest() {
-	secondsCounter(0);
-	
+	secondsCounter(0);	
 	selectBoxValue(data[0].name);
 	timeMin(1);
-	timeSec(0);
-	
+	timeSec(0);	
 	text2("");	
 	showPage(1);
 }

@@ -18,8 +18,7 @@
 
 .label {
 	display: table-cell;
-	padding-right: 30px;
-	
+	padding-right: 30px;	
 	vertical-align: top;
     padding-top: 10px;
 }
@@ -28,14 +27,9 @@
 	margin-bottom: 15px;
 }
 
-.inline-block {
-	display: inline-block;	
-}
-
-.inline-block-label {
-	display: inline-block;	
-	vertical-align: top;
-    padding-top: 10px;
+.time > div {
+	display: inline-block;
+	padding-right: 5px;
 }
 
 .button {
@@ -53,20 +47,4 @@
 
 .dx-texteditor.dx-state-readonly {
     border-color: black;
-}
-
-.page {
-	
-}
-
-.page1 {
-	
-}
-
-.page2 {
-	display: none;
-}
-
-.page3 {
-	display: none;
 }

@@ -1,4 +1,6 @@
 $(function () {
+	showPage(1);
+	
 	var viewModel = function() {
 		//time
 		this.secondsCounter = ko.observable(0);
@@ -11,7 +13,7 @@ $(function () {
 		//page2		
 		this.timer = ko.computed(function() {
 			var seconds = getSeconds(timeMin(), timeSec()) - secondsCounter();
-			return "Time Left: " + getTime(seconds);
+			return "Time Left: " + getTimeString(seconds);
 		}, this);
 		
 		this.text1 = ko.computed(function() { 
@@ -23,7 +25,7 @@ $(function () {
 				
 		//page3
 		this.time3 = ko.computed(function() {
-			return getTime(secondsCounter());
+			return getTimeString(secondsCounter());
 		}, this);
 		this.speed1 = ko.computed(function() {
 			return speedSymbolsMin(text2(), secondsCounter());
