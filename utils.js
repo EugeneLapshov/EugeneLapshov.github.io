@@ -76,8 +76,8 @@ function finish() {
 function newTest() {
 	secondsCounter(0);	
 	fragment(data[0].name);
-	timeMin(1);
-	timeSec(0);	
+	minutes(1);
+	seconds(0);	
 	inputText("");	
 	showPage(1);
 }

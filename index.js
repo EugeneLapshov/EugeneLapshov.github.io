@@ -7,12 +7,12 @@ $(function () {
 		
 		//page1
 		this.fragment = ko.observable(data[0].name);
-		this.timeMin = ko.observable(1);
-		this.timeSec = ko.observable(0);
+		this.minutes = ko.observable(1);
+		this.seconds = ko.observable(0);
 		
 		//page2		
 		this.timer = ko.computed(function() {
-			var _seconds = getSeconds(timeMin(), timeSec()) - secondsCounter();
+			var _seconds = getSeconds(minutes(), seconds()) - secondsCounter();
 			return "Time Left: " + getTimeString(_seconds);
 		}, this);
 		
@@ -43,7 +43,7 @@ $(function () {
 		//interaction (events)
 		this.onFocusIn = function(e) {			
 			if(isTimerNull()) {
-				var _time = getSeconds(timeMin(), timeSec());
+				var _time = getSeconds(minutes(), seconds());
 				setTimer(setInterval(function() { 
 					secondsCounter(secondsCounter() + 1);
 					if(secondsCounter() === _time) {
