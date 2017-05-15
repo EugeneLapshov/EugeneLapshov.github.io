@@ -33,10 +33,7 @@ $(function () {
 		this.WPM = ko.computed(function() {
 			return speedWordsMin(inputText(), secondsCounter());
 		}, this);
-		this.errors1 = ko.computed(function() {
-			return errorsSymbolsInText(outputText(), inputText());
-		}, this);
-		this.errors2 = ko.computed(function() {
+		this.errors = ko.computed(function() {
 			return errorsWordsInText(outputText(), inputText());
 		}, this);		
 		

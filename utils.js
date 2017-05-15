@@ -34,28 +34,16 @@ function speedWordsMin(text, time) {
 	return speed + " words/min";
 }
 
-function errorsSymbolsInText(outputText, text2) {
-	var symbols = text2.split("");
-	
-	var errors = 0;
-	outputText.split("").forEach(function(symbol, i, arr) {
-		if(symbol !== symbols[i]) {
-			errors++;
+function errorsWordsInText(outputText, inputText) {
+	var numberOfErrors = 0,
+		inputWords = inputText.split(" "),
+		outputWords = outputText.split(" ");	
+	outputWords.forEach(function(outputWord, i) {
+		if(outputWord !== inputWords[i]) {
+			numberOfErrors++;
 		}
 	});
-	return (errors / outputText.split("").length * 100).toFixed() + "%";
-}
-
-function errorsWordsInText(outputText, text2) {
-	var words = text2.split(" ");
-	
-	var errors = 0;
-	outputText.split(" ").forEach(function(word, i, arr) {
-		if(word !== words[i]) {
-			errors++;
-		}
-	});
-	return (errors / outputText.split(" ").length * 100).toFixed() + "%";
+	return (numberOfErrors / outputWords.length * 100).toFixed() + "%";
 }
 
 function showPage(pageIndex) {
