@@ -27,10 +27,10 @@ $(function () {
 		this.time3 = ko.computed(function() {
 			return getTimeString(secondsCounter());
 		}, this);
-		this.speed1 = ko.computed(function() {
+		this.SPM = ko.computed(function() {
 			return speedSymbolsMin(inputText(), secondsCounter());
 		}, this);
-		this.speed2 = ko.computed(function() {
+		this.WPM = ko.computed(function() {
 			return speedWordsMin(inputText(), secondsCounter());
 		}, this);
 		this.errors1 = ko.computed(function() {
