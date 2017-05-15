@@ -75,7 +75,7 @@ function finish() {
 
 function newTest() {
 	secondsCounter(0);	
-	selectBoxValue(data[0].name);
+	fragment(data[0].name);
 	timeMin(1);
 	timeSec(0);	
 	inputText("");	

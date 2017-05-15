@@ -6,7 +6,7 @@ $(function () {
 		this.secondsCounter = ko.observable(0);
 		
 		//page1
-		this.selectBoxValue = ko.observable(data[0].name);
+		this.fragment = ko.observable(data[0].name);
 		this.timeMin = ko.observable(1);
 		this.timeSec = ko.observable(0);
 		
@@ -18,7 +18,7 @@ $(function () {
 		
 		this.outputText = ko.computed(function() { 
 			return data.filter(function(_item) {
-				return _item.name === selectBoxValue();
+				return _item.name === fragment();
 			})[0].text;
 		}, this);		
 		this.inputText = ko.observable("");
@@ -59,6 +59,6 @@ $(function () {
 				finish();
 			}
 		};
-	};		
+	};
 	ko.applyBindings(viewModel);
 });
