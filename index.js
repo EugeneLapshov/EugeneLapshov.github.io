@@ -24,7 +24,7 @@ $(function () {
 		this.inputText = ko.observable("");
 				
 		//page3
-		this.time3 = ko.computed(function() {
+		this.time = ko.computed(function() {
 			return getTimeString(secondsCounter());
 		}, this);
 		this.SPM = ko.computed(function() {
