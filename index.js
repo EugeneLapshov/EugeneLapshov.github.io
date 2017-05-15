@@ -12,13 +12,13 @@ $(function () {
 		
 		//page2		
 		this.timer = ko.computed(function() {
-			var seconds = getSeconds(timeMin(), timeSec()) - secondsCounter();
-			return "Time Left: " + getTimeString(seconds);
+			var _seconds = getSeconds(timeMin(), timeSec()) - secondsCounter();
+			return "Time Left: " + getTimeString(_seconds);
 		}, this);
 		
 		this.outputText = ko.computed(function() { 
-			return data.filter(function(item) {
-				return item.name === selectBoxValue();
+			return data.filter(function(_item) {
+				return _item.name === selectBoxValue();
 			})[0].text;
 		}, this);		
 		this.inputText = ko.observable("");
@@ -43,17 +43,19 @@ $(function () {
 		//interaction (events)
 		this.onFocusIn = function(e) {			
 			if(isTimerNull()) {
-				var time = getSeconds(timeMin(), timeSec());
+				var _time = getSeconds(timeMin(), timeSec());
 				setTimer(setInterval(function() { 
 					secondsCounter(secondsCounter() + 1);
-					if(secondsCounter() === time) {
+					if(secondsCounter() === _time) {
 						finish();
 					}
 				}, 1000));
 			}
 		};
 		this.onInput = function(e) {
-			if(outputText().length === e.component.option("text").length && outputText() === e.component.option("text")) {
+			var _outputText = outputText(),
+				_inputText = e.component.option("text");
+			if(_outputText.length === _inputText.length && _outputText === _inputText) {
 				finish();
 			}
 		};
