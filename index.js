@@ -37,7 +37,7 @@ $(function () {
 			return calculateErrors(outputText(), inputText());
 		}, this);
 		
-		//interaction (events)
+		//interaction
 		this.onFocusIn = function(e) {			
 			if(isTimerNull()) {
 				var _seconds = getSeconds(minutes(), seconds());
