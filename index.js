@@ -41,7 +41,7 @@ $(function () {
 		}, this);		
 		
 		//interaction (events)
-		this.inputTextOnFocusIn = function(e) {			
+		this.onFocusIn = function(e) {			
 			if(isTimerNull()) {
 				var time = getSeconds(timeMin(), timeSec());
 				setTimer(setInterval(function() { 
@@ -52,7 +52,7 @@ $(function () {
 				}, 1000));
 			}
 		};
-		this.inputTextOnInput = function(e) {
+		this.onInput = function(e) {
 			if(outputText().length === e.component.option("text").length && outputText() === e.component.option("text")) {
 				finish();
 			}
