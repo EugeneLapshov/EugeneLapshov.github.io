@@ -31,14 +31,14 @@ function speedSymbolsMin(text, time) {
 	var speed = 0;
 	if(time !== 0)
 		speed = ((text.length / time) * 60).toFixed();
-	return speed + " characters/min (CPM)";
+	return speed + " characters/min";
 }
 
 function speedWordsMin(text, time) {
 	var speed = 0;
 	if(time !== 0)
 		speed = ((text.split(" ").length / time) * 60).toFixed();
-	return speed + " words/min (WPM)";
+	return speed + " words/min";
 }
 
 function errorsSymbolsInText(text1, text2) {
